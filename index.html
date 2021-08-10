@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <head>
     <title>Electron Auto Update Example</title>
     <style>
@@ -13,19 +12,19 @@
         }
     </style>
 </head>
-
 <body>
     <h1>Electron Auto Update Example</h1>
     <p id="version"></p>
-    <div id="notification" class="hidden">
+    <div id="notification" style="visibility: hidden;">
         <p id="message"></p>
         <button id="close-button" onClick="closeNotification()">
             Close
         </button>
-        <button id="restart-button" onClick="restartApp()" class="hidden">
+        <button id="restart-button" onClick="restartApp()" style="visibility:hidden ;">
             Restart
         </button>
     </div>
+    <!--script src="bundle.js"></script-->
     <script>
         const { ipcRenderer } = require('electron');
         const version = document.getElementById('version');
@@ -42,14 +41,14 @@
         ipcRenderer.on('update_available', () => {
             ipcRenderer.removeAllListeners('update_available');
             message.innerText = 'A new update is available. Downloading now...';
-            notification.classList.remove('hidden');
+            notification.style.visibility = 'visible';
         });
 
         ipcRenderer.on('update_downloaded', () => {
             ipcRenderer.removeAllListeners('update_downloaded');
             message.innerText = 'Update Downloaded. It will be installed on restart. Restart now?';
-            restartButton.classList.remove('hidden');
-            notification.classList.remove('hidden');
+            restartButton.style.visibility = 'visible';
+            notification.style.visibility = 'visible';
         });
 
         function closeNotification() {

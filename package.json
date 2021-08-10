@@ -2,21 +2,35 @@
   "name": "eaup",
   "version": "1.0.0",
   "description": "Test for the electron auto update package",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "start":"electron .",
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "electron-builder build --linux --win --publish never",
-    "deploy": "electron-builder build --linux --win --publish always"
+    "build": "electron-builder build --linux --publish never",
+    "deploy": "electron-builder build --linux --publish always",
+    "bundle": "browserify index.js -o bundle.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/R2rog/eaup.git"
   },
-  "author": "R2rog",
+  "author": "R2rog  <sirR2rog@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "electron": "^13.1.8",
     "electron-builder": "^22.11.7"
+  },
+  "dependencies": {
+    "electron-updater": "^4.3.9"
+  },
+  "build":{
+    "appId": "com.eaup.app",
+    "productName": "eaup",
+    "linux": {
+      "target": [
+        "deb"
+      ],
+      "category": "Productivity"
+    }
   }
 }

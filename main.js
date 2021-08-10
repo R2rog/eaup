@@ -8,7 +8,10 @@ function createWindow () {
     width: 800,
     height: 600,
     webPreferences: {
+      contextIsolation: false,
       nodeIntegration: true,
+      nodeIntegrationInWorker: true,
+      enableRemoteModule: true
     },
   });
   mainWindow.loadFile('index.html');
