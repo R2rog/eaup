@@ -1,6 +1,6 @@
 {
   "name": "eaup",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Test for the electron auto update package",
   "main": "main.js",
   "scripts": {
