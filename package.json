@@ -7,8 +7,7 @@
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "electron-builder build --linux --publish never",
-    "deploy": "electron-builder build --linux --publish always",
-    "bundle": "browserify index.js -o bundle.js"
+    "deploy": "electron-builder build --linux --publish always"
   },
   "repository": {
     "type": "git",
@@ -22,15 +21,5 @@
   },
   "dependencies": {
     "electron-updater": "^4.3.9"
-  },
-  "build":{
-    "appId": "com.eaup.app",
-    "productName": "eaup",
-    "linux": {
-      "target": [
-        "deb"
-      ],
-      "category": "Productivity"
-    }
   }
 }
